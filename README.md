@@ -11,7 +11,7 @@
 系統架構基於 **ROS 2 + Python**，支援實際機器人硬體與虛擬 Unity 環境並行運行。主要功能包括：
 - 🗺️ 地圖掃描與建圖（SLAM）
 - 📍 定位與導航（Nav2 框架）
-- 🎯 YOLOv8 物體檢測與追蹤
+- 🎯 YOLOv11 物體檢測與追蹤
 - ⚡ LiDAR + 深度相機雙重避障
 - 🧭 自動探索與目標導航
 
@@ -39,7 +39,7 @@
 │         └──────────┬─────────────┬─────┘                     │
 │                    │             │                           │
 │         ┌──────────▼───────┐ ┌──▼─────────────────┐          │
-│         │  YOLOv8 Pkg      │ │  Foxglove Studio   │          │
+│         │  YOLOv11 Pkg      │ │  Foxglove Studio   │          │
 │         │  (Detection &    │ │  (Visualization)   │          │
 │         │   Segmentation)  │ │                    │          │
 │         └──────────────────┘ └────────────────────┘          │
@@ -114,7 +114,7 @@
 
 - **模型配置**：
   - 放置 `.pt` 模型檔案於 `models/` 目錄
-  - 支援 `yolov8n.pt`（檢測）與 `yolov8n-seg.pt`（分割）
+  - 支援 `yolov11m.pt`（檢測）與 `yolov11n-seg.pt`（分割）
 
 ---
 
@@ -213,7 +213,7 @@ if yolo_info and yolo_info[0] == 1 and target_label == "Pikachu":
 | **主程式語言** | Python 3.x | 高效開發 |
 | **導航算法** | Nav2 Stack | 成熟的路徑規劃框架 |
 | **定位方案** | AMCL | 蒙特卡洛粒子濾波定位 |
-| **視覺檢測** | YOLOv8 | 實時物體檢測與分割 |
+| **視覺檢測** | YOLOv11 | 實時物體檢測與分割 |
 | **距離傳感** | LiDAR + 深度相機 | 多層次避障 |
 | **容器化** | Docker & Docker Compose | 環境一致性管理 |
 | **可視化** | Foxglove Studio | 實時數據監控 |
